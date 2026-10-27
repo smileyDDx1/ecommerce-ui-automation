@@ -23,7 +23,9 @@ env:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # Pinned: Playwright's browser dependencies target Ubuntu 24.04, and on ubuntu-latest
+    # (26.04) installing them from the package mirror took over 15 minutes.
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -43,6 +45,7 @@ jobs:
           key: playwright-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
 
       - name: Install browsers and their system dependencies
+        timeout-minutes: 10
         run: python -m playwright install --with-deps chromium firefox webkit
 
       - name: Run the suite in parallel
@@ -67,7 +70,7 @@ jobs:
   report:
     needs: test
     if: always() && needs.test.result != 'cancelled'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
