@@ -1,0 +1,17 @@
+{
+  "tax_rate": "0.08",
+  "products": [
+    {"id": "backpack", "name": "Sauce Labs Backpack", "price": "29.99"},
+    {"id": "bike-light", "name": "Sauce Labs Bike Light", "price": "9.99"},
+    {"id": "bolt-t-shirt", "name": "Sauce Labs Bolt T-Shirt", "price": "15.99"},
+    {"id": "fleece-jacket", "name": "Sauce Labs Fleece Jacket", "price": "49.99"},
+    {"id": "onesie", "name": "Sauce Labs Onesie", "price": "7.99"},
+    {"id": "red-t-shirt", "name": "Test.allTheThings() T-Shirt (Red)", "price": "15.99"}
+  ],
+  "sort_options": [
+    {"id": "name-a-to-z", "value": "az", "field": "name", "descending": false},
+    {"id": "name-z-to-a", "value": "za", "field": "name", "descending": true},
+    {"id": "price-low-to-high", "value": "lohi", "field": "price", "descending": false},
+    {"id": "price-high-to-low", "value": "hilo", "field": "price", "descending": true}
+  ]
+}

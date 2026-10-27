@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Timed out waiting for the page",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": "(?s).*Timeout \\d+ms exceeded.*"
+  },
+  {
+    "name": "Product defects (assertion failed)",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Test defects (error in test or framework code)",
+    "matchedStatuses": ["broken"]
+  }
+]

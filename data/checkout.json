@@ -1,0 +1,38 @@
+{
+  "customers": [
+    {"id": "basic-customer", "first_name": "Ada", "last_name": "Lovelace", "postal_code": "10115"},
+    {"id": "accented-name", "first_name": "José", "last_name": "Núñez", "postal_code": "28013"}
+  ],
+  "missing_field_cases": [
+    {
+      "id": "missing-first-name",
+      "customer": {"first_name": "", "last_name": "Lovelace", "postal_code": "10115"},
+      "error": "Error: First Name is required"
+    },
+    {
+      "id": "missing-last-name",
+      "customer": {"first_name": "Ada", "last_name": "", "postal_code": "10115"},
+      "error": "Error: Last Name is required"
+    },
+    {
+      "id": "missing-postal-code",
+      "customer": {"first_name": "Ada", "last_name": "Lovelace", "postal_code": ""},
+      "error": "Error: Postal Code is required"
+    }
+  ],
+  "carts": [
+    {"id": "single-item", "items": ["Sauce Labs Backpack"]},
+    {"id": "two-items", "items": ["Sauce Labs Bike Light", "Sauce Labs Onesie"]},
+    {
+      "id": "whole-catalog",
+      "items": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Onesie",
+        "Test.allTheThings() T-Shirt (Red)"
+      ]
+    }
+  ]
+}
